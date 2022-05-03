@@ -2,14 +2,11 @@ import chalk from 'chalk';
 import randomColor from 'randomcolor';
 import { print } from './print.js';
 
-const colorText = color_the_text1(process.argv[2], process.argv[2]);
-const color_the_text = chalk.hex(colorText);
-
-function color_the_text1(pro) {
+function ColorText1(pro) {
   if (pro === '0') {
     return randomColor({
-      luminosity: random,
-      hue: random,
+      luminosity: 'random',
+      hue: 'random',
     });
   } else {
     return randomColor({
@@ -18,7 +15,8 @@ function color_the_text1(pro) {
     });
   }
 }
-
+const colorText = ColorText1(process.argv[2], process.argv[2]);
+const ColorText = chalk.hex(colorText);
 console.log(
   randomColor({
     luminosity: process.argv[2],
@@ -29,9 +27,9 @@ console.log(
 const arrayLength = 30;
 const height = 9;
 
-const array = new Array(arrayLength).fill(color_the_text('#'));
-const array2 = new Array(arrayLength).fill(color_the_text('#'));
-const array3 = new Array(arrayLength).fill(color_the_text('#'));
+const array = new Array(arrayLength).fill(ColorText('#'));
+const array2 = new Array(arrayLength).fill(ColorText('#'));
+const array3 = new Array(arrayLength).fill(ColorText('#'));
 
 array3.fill(' ', 5, arrayLength - 5);
 array2.fill(' ', 5, arrayLength - 5);
@@ -43,7 +41,7 @@ const splitHex = hex.split('');
 let arrayNumber = refernceArray / 2 - 4;
 for (let i = 0; i < 7; i++) {
   const hexValue = splitHex[i];
-  const hexColored = color_the_text(hexValue);
+  const hexColored = ColorText(hexValue);
   array3[arrayNumber] = hexColored;
   arrayNumber++;
 }
